@@ -1,6 +1,9 @@
 #/etc/bin python
 
-# Decription of the motor specs, get config used to send to grbl the microstepping configuration, maximum  velocity and acceleration.
+# Decription of motor specs.
+#
+# Used to store grbl the microstepping configuration,
+#  maximum  velocity and acceleration.
 
 
 class Nema17StepperMotor():

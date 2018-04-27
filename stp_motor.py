@@ -102,8 +102,11 @@ class ControllerArduino():
         self.sendcmd('$1=0')
         self.ser.close()
 
-    def softstop(self):
-        return sendcmd('!')
+    def gohome(self):
+        return self.setPosition(0,0,0)
+
+    def stop(self):
+        return self.sendcmd('!')
 
     def resumeoperation(self):
         return self.sendcmd('~')
@@ -122,6 +125,8 @@ class ControllerArduino():
         return send_command(self.ser,cmd)
 
 
+
+
 if __name__ == '__main__':
     print('cmps','stpm')
     cmps = get_port_name()
@@ -130,7 +135,7 @@ if __name__ == '__main__':
     nema17 = Nema17StepperMotor()
     time.sleep(2)
     ctrl.appendMotor(nema17,'x')
-    ctrl.appendMotor(m55stpm,'z')
+    ctrl.appendMotor(nema17,'z')
 
 
 
